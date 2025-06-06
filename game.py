@@ -7,7 +7,7 @@ class Game:
         self.pet = Pet(name)
 
     def start(self):
-        print(f"\nWelcome to the pet care game! Your pet's name is {self.pet.name}.\n", flush=True)
+        print(f"\nWelcome to the pet care game! Your pet's name is {self.pet.name}.", flush=True)
         print(f"{self.pet.name}'s status: Hunger: {self.pet.hunger}, Happiness: {self.pet.happiness}, Energy: {self.pet.energy}\n", flush=True)
 
         while self.pet.is_alive():
@@ -37,6 +37,7 @@ class Game:
                 continue
 
             self.pet.pass_time()
+            self.pet.status()  # ✅ Show full status after each action
             time.sleep(1)
 
         else:
